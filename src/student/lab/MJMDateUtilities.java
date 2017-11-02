@@ -61,6 +61,10 @@ public class MJMDateUtilities {
     }
     
     
+    // Create one more String-to-Date method and create time calculator to determine
+    // how many minutes have passed (can use this on the final project)
+    
+    
     
     public static void main(String[] args) {
         MJMDateUtilities mjm = new MJMDateUtilities();
