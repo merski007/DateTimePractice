@@ -25,9 +25,15 @@ public class Test {
 //        System.out.println(now);
 
         // find the day of the week that christmas falls on
-        LocalDate christmas = LocalDate.of(2017, Month.DECEMBER, 25);
-        System.out.println(christmas.getDayOfWeek());
+//        LocalDate christmas = LocalDate.of(2017, Month.DECEMBER, 25);
+//        System.out.println(christmas.getDayOfWeek());
         
+        String date = "2017-12-01";
         
+        LocalDate dec1 = LocalDate.parse(date);
+        
+        System.out.println(dec1.getDayOfWeek());
+
+
     }
 }
