@@ -33,25 +33,51 @@ public class MJMDateUtilities {
      * @return a date and/or time formatted according to the specified pattern
      * @throws IllegalArgumentException if pattern is not recognized and/or date is null
      */
-    public String toString(LocalDate date, String pattern){
+    public String toString(LocalDate date, String pattern) throws IllegalArgumentException {
         if (date == null) {
             throw new IllegalArgumentException("Error: date argument cannot be null");
         }
-        
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
         return date.format(formatter);
     }
     
     
+    /**
+     * Attempts to convert a String representation of a date to a java.time.LocalDate object. 
+     * Conversion rules are based on parse definitions in the
+     * java.​time.​format.​DateTimeFormatter class.
+     *
+     * @param dateString - a string representation of a date
+     * @return a java.time.LocalDate object
+     * @throws IllegalArgumentException if the date string cannot be parsed and/or if the value is null or empty.
+     */   
+    public LocalDate toDate(String dateString) throws IllegalArgumentException {
+        if (dateString == null || dateString.isEmpty()) {
+            throw new IllegalArgumentException("Error: dateString argument cannot be null or empty");
+        }
+        
+        LocalDate date = LocalDate.parse(dateString);
+        return date;
+    }
+    
     
     
     public static void main(String[] args) {
         MJMDateUtilities mjm = new MJMDateUtilities();
-        LocalDate now = LocalDate.now();
         
-//        String test = mjm.toString(now);
-        String test = mjm.toString(now, "yyyy/MM/dd");
+//        // toString test - outputs a formatted string MM/dd/yyyy
+//        LocalDate today = LocalDate.now();
+//        System.out.println(mjm.toString(today));
+
+        // toString test - takes a date and format as parameters and returns specified format
+        LocalDate today = LocalDate.now();
+        String pattern = "yyyy/MM/dd";
+        System.out.println(mjm.toString(today, pattern));
         
-        System.out.println(test);
+//        // toDate test - takes a string as a paramter
+//        String today = "2017-11-02";
+//        mjm.toDate(today);
+//        System.out.println(mjm.toDate(today).getDayOfWeek());
+        
     }
 }
