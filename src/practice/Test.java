@@ -1,6 +1,12 @@
 package practice;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -9,19 +15,19 @@ import java.util.Date;
  * @author mjmersenski
  */
 public class Test {
-    public static void main(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE MM/dd/yyyy hh:mm:ss a");
-        Date now1 = new Date();
-        
-        String fmtDate = sdf.format(now1);
-        
-        System.out.println(fmtDate + "\n\n");
-        Calendar now2 = Calendar.getInstance();
-//        now2.set(2018, Calendar.OCTOBER, 30, 21, 38, 10);
-        now2.add(Calendar.DATE, 30);
-        
-        Date date = now2.getTime();
-        System.out.println(sdf.format(date));
+    public static void main(String[] args) throws ParseException {
+        // find the next friday the 13th
+//        LocalDate now = LocalDate.now();
+//        while(now.getDayOfMonth() != 13){
+//            now = now.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
+//        }
+//        
+//        System.out.println(now);
 
+        // find the day of the week that christmas falls on
+        LocalDate christmas = LocalDate.of(2017, Month.DECEMBER, 25);
+        System.out.println(christmas.getDayOfWeek());
+        
+        
     }
 }
