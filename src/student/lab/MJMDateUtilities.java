@@ -61,6 +61,18 @@ public class MJMDateUtilities {
         return date;
     }
 
+     /**
+     * Attempts to convert a String representation of a date to a
+     * java.time.LocalDate object by with any pattern specified. 
+     * Conversion rules are based on parse definitions in the 
+     * java.​time.​format.​DateTimeFormatter class.
+     *
+     * @param dateString - a string representation of a date
+     * @param pattern - a String with the specified date/time pattern
+     * @return a java.time.LocalDate object
+     * @throws IllegalArgumentException if the date string cannot be parsed
+     * and/or if the value is null or empty.
+     */
     public LocalDate toDate(String dateString, String pattern) {
         if (dateString == null || dateString.isEmpty()) {
             throw new IllegalArgumentException("Error: dateString argument cannot be null or empty");
@@ -71,8 +83,9 @@ public class MJMDateUtilities {
         return date;
     }
 
-    // Create one more String-to-Date method and create time calculator to determine
-    // how many minutes have passed (can use this on the final project)
+
+    
+    
     public static void main(String[] args) {
         MJMDateUtilities mjm = new MJMDateUtilities();
 
