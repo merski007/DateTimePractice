@@ -1,6 +1,8 @@
 package student.lab;
 
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -73,7 +75,7 @@ public class MJMDateUtilities {
      * @throws IllegalArgumentException if the date string cannot be parsed
      * and/or if the value is null or empty.
      */
-    public LocalDate toDate(String dateString, String pattern) {
+    public LocalDate toDate(String dateString, String pattern) throws IllegalArgumentException {
         if (dateString == null || dateString.isEmpty()) {
             throw new IllegalArgumentException("Error: dateString argument cannot be null or empty");
         }
@@ -84,7 +86,10 @@ public class MJMDateUtilities {
     }
 
 
-    
+    public int getDateDiff(){
+        
+        return 1;
+    }
     
     public static void main(String[] args) {
         MJMDateUtilities mjm = new MJMDateUtilities();
@@ -107,6 +112,9 @@ public class MJMDateUtilities {
 //        String today = "11/03/2017";
 //        String pattern = "MM/dd/yyyy";
 //        System.out.println(mjm.toDate(today, pattern).getDayOfWeek());
+
+        // getDateDiff - 
+
 
     }
 }
