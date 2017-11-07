@@ -54,11 +54,11 @@ public class MJMDateUtilities {
 
     /**
      * Attempts to convert a String representation of a date & time to a
-     * java.time.LocalDateTime object. Conversion rules are based on parse
+     * <code>LocalDateTime<code> object. Conversion rules are based on parse
      * definitions in the java.​time.​format.​DateTimeFormatter class.
      *
      * @param dateString a string representation of a date
-     * @return a java.time.LocalDateTime object
+     * @return a <code>LocalDateTime<code> object
      * @throws IllegalArgumentException if the date string cannot be parsed
      * and/or if the string object is null or empty.
      */
@@ -73,13 +73,13 @@ public class MJMDateUtilities {
 
      /**
      * Attempts to convert a String representation of a date to a
-     * java.time.LocalDateTime object by with any pattern specified. 
+     * <code>LocalDateTime<code> object by with any pattern specified. 
      * Conversion rules are based on parse definitions in the 
      * java.​time.​format.​DateTimeFormatter class.
      *
      * @param dateString a string representation of a date & time
      * @param pattern a String with the specified date & time pattern
-     * @return a java.time.LocalDateTime object
+     * @return a <code>LocalDateTime<code> object
      * @throws IllegalArgumentException if the date string cannot be parsed
      * and/or if the string object is null or empty.
      */
@@ -94,8 +94,8 @@ public class MJMDateUtilities {
     }
 
      /**
-     * Attempts to perform a calculation between two LocalDateTime objects by
-     * using a specified ChronoUnit and returns a long object.
+     * Attempts to perform a calculation between two <code>LocalDateTime<code> objects by
+     * using a specified <code>ChronoUnit<code> and returns a <code>long<code> object.
      * 
      * supported ChronoUnits are:
      * SECONDS
@@ -108,9 +108,9 @@ public class MJMDateUtilities {
      * all other values will throw an exception. calculation will take endDate and
      * subtract startDate to return long value.
      *
-     * @param startDate the starting date for calculation
-     * @param endDate the end date for calculation
-     * @param unit must be a supported ChronoUnit from list above
+     * @param startDate the starting <code>LocalDateTime<code> object for calculation
+     * @param endDate the ending <code>LocalDateTime<code> object for calculation
+     * @param unit must be a supported <code>ChronoUnit<code> from list above
      * @return a long object
      * @throws IllegalArgumentException if any objects are null.
      */
